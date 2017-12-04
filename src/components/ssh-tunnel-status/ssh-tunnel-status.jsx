@@ -7,11 +7,13 @@ import styles from './ssh-tunnel-status.less';
 class SshTunnelStatus extends Component {
   static displayName = 'SshTunnelStatusComponent';
 
+  // Indicate the property types of the state variables (for validation):
   static propTypes = {
     sshTunnel: PropTypes.bool,
     sshTunnelHostPortString: PropTypes.string
   };
 
+  // Set the default values of the state variables:
   static defaultProps = {
     sshTunnel: false,
     sshTunnelHostPortString: ''
@@ -23,11 +25,13 @@ class SshTunnelStatus extends Component {
    * @returns {React.Component} The rendered component.
    */
   render() {
+    // if the sshTunnel prop is false, do not render any html
     if (!this.props.sshTunnel) {
       return null;
     }
 
     return (
+      // else, render html based on the state variables
       <div
         data-test-id="ssh-tunnel-status"
         className={classnames(styles['ssh-tunnel-status'])}>
@@ -45,5 +49,6 @@ class SshTunnelStatus extends Component {
   }
 }
 
+// Export the store so it can be used by other pieces of our application
 export default SshTunnelStatus;
 export { SshTunnelStatus };

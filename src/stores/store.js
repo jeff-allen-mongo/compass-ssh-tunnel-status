@@ -66,7 +66,7 @@ const SshTunnelStatusStore = Reflux.createStore({
   },
 
   /**
-   * Initialize the Server Version store state.
+   * Initialize the SSH Tunnel store state.
    *
    * @return {Object} initial store state.
    */
